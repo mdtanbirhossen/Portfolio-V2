@@ -1,11 +1,11 @@
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
-const Page = () => {
+export default function Home() {
   return (
-    <div>
-      
+    <div className="">
+      <button>hello</button>
+      <Button>hello</Button>
     </div>
   );
 }
-
-export default Page;
