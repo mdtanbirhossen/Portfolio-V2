@@ -121,3 +121,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+@font-face {
+  font-family: 'Nasalization Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nasalization Medium'), url('/Nasalization.woff') format('woff');
+}
+
+.nasalization-font {
+  font-family: 'Nasalization Medium', sans-serif;
+    font-weight: normal;
+    font-size: px;
+    
+}
