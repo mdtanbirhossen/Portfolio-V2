@@ -1,29 +1,143 @@
 "use client"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import Navbar from "../Navbar/Navbar"
+import Container from "../Common/Container"
+import { useRef } from "react"
+import NavLogo from "../Navbar/NavLogo"
 
-type Props = {
-    data?: {
-        id: string;
-        fullName: string;
-        email: string;
-    }[]
-}
 
-export default function Banner({ data }: Props) {
 
-    useGSAP(() => { gsap.to('#amber-box', { y: 250, repeat: -1, yoyo: true, rotate: 360 }) }, [])
+export default function Banner() {
+    const boxRef = useRef(null)
+
+    useGSAP(() => { gsap.to(boxRef.current, { y: 250, repeat: -1, yoyo: true, rotate: 360 }) }, [])
 
     return (
         <div>
-            {data?.map((item) => (
-                <div key={item.id}>
-                    <h2>{item.fullName}</h2>
-                    <p>{item.email}</p>
+            <Container>
+                <div className="flex flex-wrap">
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
+                    <p className="">About me</p>
+                    <div className="text-7xl">Tanbir Hossen</div>
                 </div>
-            ))}
 
-            <div id="amber-box" className="bg-amber-500 h-20 w-20 rounded-2xl absolute top-0 left-0"></div>
+
+                <NavLogo />
+                {/* <div ref={boxRef} id="amber-box" className="bg-amber-500 h-20 w-20 rounded-2xl absolute top-0 left-0"></div> */}
+            </Container>
+
         </div>
     )
 }
