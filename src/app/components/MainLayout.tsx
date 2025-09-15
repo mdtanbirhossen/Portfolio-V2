@@ -26,8 +26,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 enableSystem
                 disableTransitionOnChange
             >
-                <Container className={'sticky top-4 z-50'}><Navbar /></Container>
-
+                <Navbar />
                 <main className="min-h-[calc(100vh-136px)] px-2 sm:px-4 lg:px-6">
                     {children}
                 </main>
