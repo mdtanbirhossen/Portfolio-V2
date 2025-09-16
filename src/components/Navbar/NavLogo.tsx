@@ -14,6 +14,10 @@ const NavLogo = () => {
         if (!tl.current) {
             tl.current = gsap.timeline({ paused: true });
 
+            //detecting screen size
+            const isSmall = window.innerWidth < 640;
+            const xValue = isSmall ? 145 : 190;
+
             tl.current
                 .to(
                     leftLogoRef.current, {
@@ -34,7 +38,7 @@ const NavLogo = () => {
                 .to(
                     rightLogoRef.current,
                     {
-                        x: 190,
+                        x: xValue,
                         delay: 0.1,
                         duration: 0.5,
                         ease: "power2.out",
@@ -69,7 +73,7 @@ const NavLogo = () => {
                 {/* Left Logo */}
                 <div ref={leftLogoRef} >
                     <Image
-                        className="hidden dark:block relative top-0.5"
+                        className="hidden dark:block relative h-[16px] w-[32px] sm:h-[20px] sm:w-[40px] top-0.5"
                         src={"/assets/left-white-logo.png"}
                         height={20}
                         width={40}
@@ -77,7 +81,7 @@ const NavLogo = () => {
                     />
 
                     <Image
-                        className="dark:hidden relative top-0.5"
+                        className="dark:hidden relative h-[16px] w-[32px] sm:h-[20px] sm:w-[40px] top-0.5"
                         src={"/assets/left-black-logo.png"}
                         height={20}
                         width={40}
@@ -87,20 +91,21 @@ const NavLogo = () => {
 
                 {/* Middle Text (hidden at first) */}
                 <div ref={textRef} className="font-bold opacity-0 dark:text-white whitespace-nowrap">
-                    Md Tanbir Hossen
+                    <span className="flex sm:hidden text-sm">Tanbir Hossen</span>
+                    <span className="hidden sm:flex">Md Tanbir Hossen</span>
                 </div>
 
                 {/* Right Logo */}
                 <div ref={rightLogoRef}>
                     <Image
-                        className="hidden dark:block relative right-[195px] bottom-0.5"
+                        className="hidden dark:block relative h-[16px] w-[32px] sm:h-[20px] sm:w-[40px] right-[142px] sm:right-[195px] bottom-0.5"
                         src={"/assets/right-white-logo.png"}
                         height={20}
                         width={40}
                         alt="right white image"
                     />
                     <Image
-                        className="dark:hidden relative right-[195px] bottom-0.5"
+                        className="dark:hidden relative h-[16px] w-[32px] sm:h-[20px] sm:w-[40px] right-[142px] sm:right-[195px] bottom-0.5"
                         src={"/assets/right-black-logo.png"}
                         height={20}
                         width={40}
