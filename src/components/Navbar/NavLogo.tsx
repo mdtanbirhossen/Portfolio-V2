@@ -86,7 +86,7 @@ const NavLogo = () => {
                 </div>
 
                 {/* Middle Text (hidden at first) */}
-                <div ref={textRef} className="font-bold opacity-0 dark:text-white">
+                <div ref={textRef} className="font-bold opacity-0 dark:text-white whitespace-nowrap">
                     Md Tanbir Hossen
                 </div>
 

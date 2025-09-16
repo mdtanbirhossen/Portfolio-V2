@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+@theme {
+  --color-primary-dark: #212121;
+  --color-secondary-dark: #505050;
+  --color-primary-light: #ececec;
+  --color-secondary-light: #ffffff;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -124,6 +132,37 @@
 
 
 
+
+
+
+:root {
+  --scrollbar-track: var(--color-primary-light);
+  --scrollbar-thumb: var(--color-primary-dark);
+}
+
+.dark {
+  --scrollbar-track: var(--color-primary-dark);
+  --scrollbar-thumb: var(--color-primary-light);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+* {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+
+
+
+
+
+/* nasalization font */
 @font-face {
   font-family: 'Nasalization Medium';
   font-style: normal;
@@ -133,6 +172,9 @@
 
 .nasalization-font {
   font-family: 'Nasalization Medium', sans-serif;
-    font-weight: normal;
-    
+  font-weight: normal;
 }
+
+/* .active {
+  background-color: var(--color-secondary-dark);
+} */

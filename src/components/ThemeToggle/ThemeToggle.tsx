@@ -1,40 +1,44 @@
-"use client"
 
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import gsap from "gsap"
 
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 export function ThemeToggle() {
   const { setTheme } = useTheme()
+  const sunRef = React.useRef<SVGSVGElement | null>(null)
+
+const handleMouseEnter = () => {
+  if (sunRef.current && !gsap.isTweening(sunRef.current)) {
+    gsap.to(sunRef.current, {
+      rotation: "+=360",
+      duration: 1,
+      ease: "none",
+      repeat: -1,
+      transformOrigin: "50% 50%"
+    })
+  }
+}
+
+const handleMouseLeave = () => {
+  if (sunRef.current) {
+    // gsap.killTweensOf(sunRef.current)
+    // gsap.to(sunRef.current, {
+    //   rotation: 0,
+    //   duration: 0.5,
+    //   ease: "power2.out",
+    // })
+  }
+}
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className=" bg-secondary-light text-secondary-dark dark:text-secondary-light dark:bg-secondary-dark rounded-full p-1.5 cursor-pointer ">
+      <Sun 
+      // ref={sunRef}
+      onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave} onClick={() => setTheme("dark")} className="h-[1.2rem] w-[1.2rem] animate-spin rounded-full dark:scale-0 dark:-rotate-90 dark:hidden" />
+      <Moon onClick={() => setTheme("light")} className=" h-[1.2rem] w-[1.2rem] animate-pulse dark:scale-100 dark:rotate-0 hidden dark:block" />
+    </div>
   )
 }
