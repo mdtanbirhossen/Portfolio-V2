@@ -178,3 +178,34 @@
 /* .active {
   background-color: var(--color-secondary-dark);
 } */
+
+
+
+/* theme toggler button animation transition */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+::view-transition-new(root) {
+  z-index: 0;
+  animation: reveal 1.5s ease-in-out forwards;
+}
+
+@keyframes reveal {
+  from {
+    clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
+    opacity: 1;
+  }
+
+  to {
+    clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
+    opacity: 1;
+  }
+}
