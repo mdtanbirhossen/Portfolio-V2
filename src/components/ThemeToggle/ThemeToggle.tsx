@@ -8,7 +8,7 @@ export function ThemeToggle() {
 
   const handleToggle = (e: React.MouseEvent<HTMLDivElement>) => {
     // Fallback if view transitions not supported
-    if (!(document as any).startViewTransition) {
+    if (!(document).startViewTransition) {
       setTheme(theme === "dark" ? "light" : "dark")
       return
     }
@@ -19,7 +19,7 @@ export function ThemeToggle() {
     document.documentElement.style.setProperty("--y", `${y}px`)
 
       // Start view transition
-      ; (document as any).startViewTransition(() => {
+      ; (document).startViewTransition(() => {
         setTheme(theme === "dark" ? "light" : "dark")
       })
   }

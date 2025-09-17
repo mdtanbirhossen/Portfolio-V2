@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Link from 'next/link';

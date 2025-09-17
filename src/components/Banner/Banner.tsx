@@ -3,8 +3,6 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import Container from "../Common/Container"
 import { useRef } from "react"
-import NavLogo from "../Navbar/NavLogo"
-import NavMenu from "../Navbar/NavMenu"
 
 
 

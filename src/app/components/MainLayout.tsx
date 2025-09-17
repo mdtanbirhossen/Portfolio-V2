@@ -3,12 +3,9 @@ import Container from "@/components/Common/Container";
 import Footer from "@/components/Footer/Footer";
 import Loading from "@/components/Loading/Loading";
 import Navbar from "@/components/Navbar/Navbar";
-import { ThemeProvider } from "@/components/Provider/theme-provider";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         const timeOut = setTimeout(() => {
