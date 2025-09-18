@@ -17,12 +17,12 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     if (loading) return <Loading />
 
     return (
-        <div className="px-2 bg-primary-light dark:bg-primary-dark text-primary-dark dark:text-primary-light">
+        <div className="px-2 bg-primary-light dark:bg-primary-dark text-primary-dark dark:text-primary-light pb-3">
                 <Navbar />
-                <main className="min-h-[calc(100vh-136px)] mt-8">
+                <main className="min-h-[calc(100vh-150px)] ">
                     {children}
                 </main>
-                <Container><Footer /></Container>
+                <Footer />
         </div>
     )
 }

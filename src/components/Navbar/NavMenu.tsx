@@ -217,33 +217,30 @@ export default function NavMenu({
                         isMenuOpen ? 'open' : '',
                         'inline-flex flex-col items-center justify-center',
                         'rounded-full',
-                        'bg-white',
+                        'dark:bg-secondary-dark bg-secondary-light text-primary-light',
                         'pointer-events-auto',
                         'px-[7px] py-3',
                         'border-0 cursor-pointer p-0',
-                        'will-change-transform'
+                        'will-change-transform',
                     ].join(' ')}
                     onClick={handleToggle}
                     aria-label={menuAriaLabel}
                     aria-pressed={isMenuOpen}
-                    style={{ background: menuBg }}
                 >
                     <span
-                        className="menu-line block mx-auto rounded-[2px]"
+                        className="menu-line block mx-auto rounded-[2px] bg-secondary-dark dark:bg-primary-light"
                         style={{
                             width: 20,
                             height: 2,
-                            background: menuContentColor,
                             transform: isMenuOpen ? 'translateY(4px) rotate(45deg)' : 'none'
                         }}
                     />
                     <span
-                        className="menu-line short block mx-auto rounded-[2px]"
+                        className="menu-line short block mx-auto rounded-[2px] bg-secondary-dark dark:bg-primary-light"
                         style={{
                             marginTop: '6px',
                             width: 20,
                             height: 2,
-                            background: menuContentColor,
                             transform: isMenuOpen ? 'translateY(-4px) rotate(-45deg)' : 'none'
                         }}
                     />
@@ -272,7 +269,7 @@ export default function NavMenu({
                             'flex flex-wrap',
                             'gap-x-0 gap-y-1',
                             'pointer-events-auto',
-                            'bg-primary-light dark:bg-primary-dark border border-secondary-light rounded-4xl py-6 md:hidden'
+                            'bg-primary-light dark:bg-primary-dark border-2 border-secondary-light dark:border-secondary-dark rounded-4xl py-6 md:hidden'
                         ].join(' ')}
                         role="menu"
                         aria-label="Menu links"
