@@ -1,5 +1,4 @@
 "use client"
-import Container from "@/components/Common/Container";
 import Footer from "@/components/Footer/Footer";
 import Loading from "@/components/Loading/Loading";
 import Navbar from "@/components/Navbar/Navbar";

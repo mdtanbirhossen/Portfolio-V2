@@ -24,8 +24,8 @@ export default function NavLinks() {
         const el = linkRefs.current[index];
         if (el) {
             gsap.to(el, {
-                y: -3,
-                scale: 1.1,
+                y: -1,
+                scale: 1.02,
                 duration: 0.3,
                 ease: "power3.out",
             });
