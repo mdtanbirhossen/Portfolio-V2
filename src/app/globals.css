@@ -135,6 +135,7 @@
 
 
 
+
 :root {
   --scrollbar-track: var(--color-primary-light);
   --scrollbar-thumb: var(--color-primary-dark);
@@ -208,4 +209,33 @@
     clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
     opacity: 1;
   }
+}
+
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.bg-animated-grid-light {
+  background-color: var(--color-primary-light);
+  background-image: linear-gradient(var(--color-secondary-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-secondary-light) 1px, transparent 1px);
+  background-size: 30px 30px;
+  /* grid size */
+  animation: grid-move 20s linear infinite;
+}
+
+.bg-animated-grid-dark {
+  background-color: var(--color-primary-dark);
+  background-image: linear-gradient(var(--color-secondary-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-secondary-dark) 1px, transparent 1px);
+  background-size: 30px 30px;
+  /* grid size */
+  animation: grid-move 20s linear infinite;
 }
