@@ -1,5 +1,6 @@
 import Container from "../Common/Container";
 import SplitText from "../SplitText/SplitText";
+// import Designation from "./Designation";
 
 
 export default function Banner() {
@@ -37,6 +38,9 @@ export default function Banner() {
                         rootMargin="-100px"
                         textAlign="center"
                     />
+                </div>
+                <div>
+                    {/* <Designation /> */}
                 </div>
             </div>
         </Container>
