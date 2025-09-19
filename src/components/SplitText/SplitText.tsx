@@ -61,6 +61,8 @@ const SplitText: React.FC<SplitTextProps> = ({
                 _rbsplitInstance?: GSAPSplitText;
             };
 
+            gsap.set(el, { opacity: 1 });
+            
             if (el._rbsplitInstance) {
                 try {
                     el._rbsplitInstance.revert();
@@ -130,7 +132,7 @@ const SplitText: React.FC<SplitTextProps> = ({
                 });
                 try {
                     splitInstance.revert();
-                } catch (error) {console.error(error) }
+                } catch (error) { console.error(error) }
                 el._rbsplitInstance = undefined;
             };
         },
@@ -159,7 +161,7 @@ const SplitText: React.FC<SplitTextProps> = ({
             wordWrap: 'break-word',
             willChange: 'transform, opacity'
         };
-        const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
+        const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className} opacity-0`;
         switch (tag) {
             case 'h1':
                 return (

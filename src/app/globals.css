@@ -9,6 +9,7 @@
   --color-secondary-dark: #505050;
   --color-primary-light: #ececec;
   --color-secondary-light: #ffffff;
+  --color-secondary-light-text: #bfbfbf;
 }
 
 @theme inline {

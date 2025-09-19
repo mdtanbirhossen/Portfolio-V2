@@ -1,48 +1,64 @@
 import Container from "../Common/Container";
 import SplitText from "../SplitText/SplitText";
-// import Designation from "./Designation";
+import TextSlider from "../TextSlider/TextSlider";
 
 
 export default function Banner() {
 
     return (
-        <Container className="min-h-[calc(100vh-72px)] flex  items-center justify-center">
+        <Container className="min-h-[calc(100vh-72px)] flex flex-col  items-center justify-center">
+
+            {/* name intro */}
             <div>
-                {/* name intro */}
-                <div>
-                    <SplitText
-                        text="Hi, I'm"
-                        className="text-sm md:text-xl lg:text-2xl font-semibold text-center"
-                        delay={100}
-                        duration={0.6}
-                        ease="power3.out"
-                        splitType="chars"
-                        from={{ opacity: 0, y: 40 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign="center"
-                    />
-                    <span>&nbsp;&nbsp;&nbsp;</span>
-                    <SplitText
-                        text="Md Tanbir Hossen"
-                        className="text-2xl md:text-4xl lg:text-5xl font-semibold text-center"
-                        delay={100}
-                        startDelay={0.7}
-                        duration={0.6}
-                        ease="power3.out"
-                        splitType="chars"
-                        from={{ opacity: 0, y: 40 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign="center"
-                    />
-                </div>
-                <div>
-                    {/* <Designation /> */}
-                </div>
+                <SplitText
+                    text="Hi, I'm"
+                    className="text-sm md:text-xl lg:text-2xl font-semibold text-center"
+                    delay={50}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="center"
+                />
+                <span>&nbsp;&nbsp;</span>
+                <SplitText
+                    text="Md Tanbir Hossen"
+                    className="text-2xl md:text-4xl lg:text-5xl font-semibold text-center"
+                    delay={100}
+                    startDelay={0.7}
+                    duration={0.6}
+                    ease="power3.out"
+                    splitType="chars"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    rootMargin="-100px"
+                    textAlign="center"
+                />
             </div>
+            <div className="">
+
+                <TextSlider
+                    sentences={[
+                        "Full Stack Developer crafting responsive and user-friendly web experiences.",
+                        "Software Engineer building efficient and scalable web applications.",
+                        "MERN Stack Developer creating dynamic and interactive web platforms.",
+                        "Backend Developer designing robust server-side architectures and APIs."
+                    ]
+                    }
+                    duration={1} // cursor animation duration
+                    delayBetweenSentences={5000} // wait before next sentence
+                    className="text-sm md:text-lg lg:text-xl text-center text-secondary-dark dark:text-secondary-light-text"
+                    cursorClassName="bg-secondary-dark"
+                    parentClassName="w-fit "
+                />
+
+
+            </div>
+
         </Container>
     )
 }
