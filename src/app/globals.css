@@ -222,20 +222,21 @@
   }
 }
 
-.bg-animated-grid-light {
-  background-color: var(--color-primary-light);
-  background-image: linear-gradient(var(--color-secondary-light) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-secondary-light) 1px, transparent 1px);
-  background-size: 30px 30px;
-  /* grid size */
-  animation: grid-move 20s linear infinite;
+:root {
+  --grid-bg: var(--color-primary-light);
+  --grid-line: var(--color-secondary-light);
 }
 
-.bg-animated-grid-dark {
-  background-color: var(--color-primary-dark);
-  background-image: linear-gradient(var(--color-secondary-dark) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-secondary-dark) 1px, transparent 1px);
-  background-size: 30px 30px;
-  /* grid size */
+.dark {
+  --grid-bg: var(--color-primary-dark);
+  --grid-line: var(--color-secondary-dark);
+}
+
+.bg-animated-grid {
+  background-color: var(--grid-bg);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
   animation: grid-move 20s linear infinite;
 }
