@@ -30,7 +30,7 @@ export function ThemeToggle() {
       className="bg-secondary-light text-secondary-dark dark:text-secondary-light 
                  dark:bg-secondary-dark rounded-full p-1.5 cursor-pointer flex items-center justify-center"
     >
-      <Sun className="h-[1.2rem] w-[1.2rem] animate-spin dark:hidden" />
+      <Sun className="h-[1.2rem] w-[1.2rem] animate-pulse dark:hidden" />
       <Moon className="h-[1.2rem] w-[1.2rem] animate-pulse hidden dark:block" />
     </div>
   )
