@@ -1,3 +1,4 @@
+"use client";
 import type { CSSProperties } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
@@ -288,6 +289,7 @@ export default function NavMenu({
                                 <Link
                                     role="menuitem"
                                     href={item.href}
+                                    onClick={handleToggle}
                                     aria-label={item.ariaLabel || item.label}
                                     className={[
                                         'pill-link',

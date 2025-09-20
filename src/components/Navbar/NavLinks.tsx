@@ -1,3 +1,4 @@
+"use client"
 import gsap from 'gsap';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +9,7 @@ export const navLinks = [
     { label: 'project', ariaLabel: 'Project', href: '/project' },
     { label: 'about me', ariaLabel: 'About me', href: '/about-me' },
     { label: 'contact', ariaLabel: 'Contact', href: '/contact' },
-    { label: 'resume', ariaLabel: 'Resume', href: '/resume' },
+    { label: 'resume', ariaLabel: 'Resume', href: '/' },
 ]
 
 export default function NavLinks() {
