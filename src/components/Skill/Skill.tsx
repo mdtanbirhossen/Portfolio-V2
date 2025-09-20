@@ -46,7 +46,7 @@ export const getIconPlaceholder = (): JSX.Element => {
 const SkillsSection: React.FC = () => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
-    const [activeCategory, setActiveCategory] = useState<string>("frontend");
+    const [activeCategory, setActiveCategory] = useState<string>("languages");
     const [borderPosition, setBorderPosition] = useState<number>(0);
     const autoRotateTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -243,10 +243,10 @@ const SkillsSection: React.FC = () => {
                     <div className="flex flex-col justify-center w-full space-y-2 md:space-y-4 mb-12">
                         <h2
                             ref={titleRef}
-                            className="bottom-clipped relative inline-block overflow-hidden text-center font-anek text-4xl font-normal text-raisin-black sm:text-5xl lg:text-6xl"
+                            className="bottom-clipped relative inline-block overflow-hidden text-center  text-2xl md:text-4xl lg:text-5xl font-normal text-raisin-black "
                             data-animation="text"
                         >
-                            <span className="relative ">Skills & Expertise</span>
+                            Skills & Expertise
                         </h2>
                         <p
                             className="bottom-clipped inline-block overflow-hidden text-center mx-auto w-full font-work text-base font-normal text-gray-600 sm:text-lg lg:max-w-3xl"
@@ -257,19 +257,19 @@ const SkillsSection: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="categories-container grid  grid-cols-3 sm:grid-cols-4 text-center mx-auto w-full items-center justify-between sm:justify-center  gap-3 mb-8">
+                    <div className="categories-container grid  grid-cols-3 sm:grid-cols-5 text-center mx-auto w-full items-center justify-between sm:justify-center  gap-3 mb-8">
                         {Object.keys(skillsData).map((category) => (
                             <button
                                 key={category}
                                 onClick={() => handleCategoryChange(category)}
                                 className={`category-btn px-2.5 py-2.5 md:px-4 md:py-3 rounded-lg  font-medium transition-all relative ${activeCategory === category
-                                        ? "text-gray-800"
+                                        ? ""
                                         : "bg-gray-50 text-gray-600 border border-gray-200 hover:border-gray-300"
                                     }`}
                             >
                                 {activeCategory === category && (
                                     <div
-                                        className="absolute inset-0 rounded-lg"
+                                        className="absolute inset-0 rounded-lg "
                                         style={{
                                             border: '1px solid transparent',
                                             backgroundImage: 'linear-gradient(90deg, #f3f4f6, #9ca3af, #1f2937, #9ca3af, #f3f4f6)',

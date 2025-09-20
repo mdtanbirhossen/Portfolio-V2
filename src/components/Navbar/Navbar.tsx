@@ -8,7 +8,7 @@ export default function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={` flex justify-between items-center px-3 py-2 text-[#1e2832] border-white dark:border-secondary-dark border-2 rounded-full  ${className}`}
+      className={` bg-primary-light/50 dark:bg-primary-dark/50  flex justify-between items-center px-3 py-2 text-[#1e2832] border-white dark:border-secondary-dark border-2 rounded-full  ${className}`}
     >
       <NavLogo />
       <div className="flex items-center gap-2">
