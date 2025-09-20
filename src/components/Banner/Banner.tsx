@@ -60,8 +60,8 @@ export default function Banner() {
 
             </div>
             <div className="flex  gap-2 mt-2">
-                <Link href={''}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Github <Github /></Button></Link>
-                <Link href={''}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Resume <FileSymlink /></Button></Link>
+                <Link href={''}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Github <Github /></Button></Link>
+                <Link href={''}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Resume <FileSymlink /></Button></Link>
 
 
             </div>
