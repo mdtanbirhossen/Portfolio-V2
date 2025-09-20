@@ -66,23 +66,27 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                 const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
                 if (!response.ok) throw new Error("Failed to fetch contributions")
                 const data = await response.json()
+            
 
                 setContributions(data.contributions)
                 updateDisplayedContributions(data.contributions, selectedYear)
 
                 // Mock stats
-                // setStats({
-                //   totalCommits: Object.values(data.total).reduce((sum: number, commits: number) => sum + commits, 0),
-                //   repositories: 115,
-                //   pullRequests: 200,
-                //   stars: 15,
-                //   languages: [
-                //     { name: "JavaScript", count: 70 },
-                //     { name: "TypeScript", count: 65 },
-                //     { name: "Python", count: 12 },
-                //   ],
-                //   monthlyCommits: [30, 10, 7, 36, 45, 80, 100, 120, 170, 160, 220, 190],
-                // })
+                setStats({
+                    totalCommits: (Object.values(data.total) as number[]).reduce(
+                        (sum, commits) => sum + commits,
+                        0
+                    ),
+                    repositories: 115,
+                    pullRequests: 200,
+                    stars: 15,
+                    languages: [
+                        { name: "JavaScript", count: 70 },
+                        { name: "TypeScript", count: 65 },
+                        { name: "Python", count: 12 },
+                    ],
+                    monthlyCommits: [30, 10, 7, 36, 45, 80, 100, 120, 170, 160, 220, 190],
+                })
             } catch (err: any) {
                 setError("Error fetching data: " + err.message)
                 console.error("Error fetching data:", err)
@@ -101,20 +105,20 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
 
         const ctx = gsap.context(() => {
             gsap.from(headerRef.current, { opacity: 0, y: 30, duration: 0.6 })
-            //   gsap.from(statsRef.current?.children, {
-            //     opacity: 0,
-            //     y: 20,
-            //     stagger: 0.2,
-            //     duration: 0.6,
-            //     scrollTrigger: { trigger: statsRef.current, start: "top 80%" },
-            //   })
-            //   gsap.from(chartRef.current?.children, {
-            //     opacity: 0,
-            //     y: 30,
-            //     stagger: 0.2,
-            //     duration: 0.6,
-            //     scrollTrigger: { trigger: chartRef.current, start: "top 80%" },
-            //   })
+            gsap.from(Array.from(statsRef.current?.children ?? []), {
+                opacity: 0,
+                y: 20,
+                stagger: 0.2,
+                duration: 0.6,
+                scrollTrigger: { trigger: statsRef.current, start: "top 80%" },
+            })
+            gsap.from(Array.from(chartRef.current?.children ?? []), {
+                opacity: 0,
+                y: 30,
+                stagger: 0.2,
+                duration: 0.6,
+                scrollTrigger: { trigger: chartRef.current, start: "top 80%" },
+            })
         }, containerRef)
 
         return () => ctx.revert()

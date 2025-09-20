@@ -1,4 +1,4 @@
-import Container from "../Common/Container";
+
 import NavLogo from "../Navbar/NavLogo";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
       <NavLogo />
       {/* social links */}
       <div></div>
-      <div>Copyright © 2023</div>
+      <div>Copyright © 2025</div>
     </footer>
   )
 }
