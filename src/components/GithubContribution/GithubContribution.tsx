@@ -182,13 +182,13 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
     return (
         <section ref={containerRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-transparent to-transparent">
             <Container className="">
-                <div className="relative  bg-transparent backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100/50 overflow-hidden">
+                <div className="relative  bg-transparent backdrop-blur-xl rounded-3xl shadow-2xl border border-secondary-dark overflow-hidden">
                     <div className="relative p-10">
                         <div ref={headerRef} className="flex items-center gap-4 mb-6">
-                            <FaGithub className="w-10 h-10 text-gray-900" />
+                            <FaGithub className="w-10 h-10 " />
                             <div>
-                                <h1 className="text-3xl font-extrabold text-gray-900">GitHub Contributions</h1>
-                                <p className="text-sm text-gray-600 mt-1">Coding the future, one commit at a time — @{username}</p>
+                                <h1 className="text-3xl font-extrabold">GitHub Contributions</h1>
+                                <p className="text-sm text-secondary-dark dark:text-secondary-light-text mt-1">Coding the future, one commit at a time — @{username}</p>
                             </div>
                         </div>
 
@@ -210,7 +210,7 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
 
                         {/* Contribution Graph */}
                         <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-2xl font-semibold text-gray-900">{totalContributions} Contributions</h2>
+                            <h2 className="text-2xl font-semibold ">{totalContributions} Contributions</h2>
                             <select
                                 className="bg-gray-100/80 backdrop-blur-sm text-gray-900 rounded-lg px-4 py-2 text-sm font-medium border border-gray-200/50 hover:bg-gray-200 transition-colors"
                                 value={selectedYear}
@@ -283,7 +283,9 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                                 <span>Less</span>
                                 <div className="flex gap-[3px]">
                                     {[0, 4, 8, 12, 16].map(count => (
-                                        <div key={count} className={`w-[14px] h-[14px] rounded-md ${getContributionColor(count)}`} />
+                                        <div key={count} style={{
+                                            clipPath: 'polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%)'
+                                        }} className={`w-[18.5px] h-[14px]   ${getContributionColor(count)}`} />
                                     ))}
                                 </div>
                                 <span>More</span>
