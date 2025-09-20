@@ -237,7 +237,7 @@ const SkillsSection: React.FC = () => {
     };
 
     return (
-        <section ref={wrapperRef} className="py-10 md:py-20 bg-gradient-to-b from-white/50 to-transparent dark:from-black/50 dark:to-black/30 overflow-x-hidden">
+        <section ref={wrapperRef} className="min-h-[800px] sm:min-h-[750px] lg:min-h-[650px]  py-10 md:py-20 bg-gradient-to-b from-white/50 to-transparent dark:from-secondary-dark/50 dark:to-transparent overflow-x-hidden">
             <Container className=" " >
                 <div className=" rounded-lg relative z-10">
                     <div className="flex flex-col justify-center w-full space-y-2 md:space-y-4 mb-12">
