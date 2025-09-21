@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Skill, skillsData } from './skill-data'
 import Container from "../Common/Container";
+import Title from "../Common/Title";
 
 
 
@@ -237,25 +238,11 @@ const SkillsSection: React.FC = () => {
     };
 
     return (
-        <section ref={wrapperRef} className="min-h-[800px] sm:min-h-[750px] lg:min-h-[650px]  py-10 md:py-20 bg-gradient-to-b from-white/50 to-transparent dark:from-secondary-dark/50 dark:to-transparent overflow-x-hidden">
+        <section ref={wrapperRef} className="min-h-[750px] sm:min-h-[700px] lg:min-h-[600px]  py-10 md:py-20 bg-gradient-to-b from-white/50 to-transparent dark:from-black/50 dark:to-transparent overflow-x-hidden">
             <Container className=" " >
-                <div className=" rounded-lg relative z-10">
-                    <div className="flex flex-col justify-center w-full space-y-2 md:space-y-4 mb-12">
-                        <h2
-                            ref={titleRef}
-                            className="bottom-clipped relative inline-block overflow-hidden text-center  text-2xl md:text-4xl lg:text-5xl font-normal text-raisin-black "
-                            data-animation="text"
-                        >
-                            Skills & Expertise
-                        </h2>
-                        <p
-                            className="bottom-clipped inline-block overflow-hidden text-center mx-auto w-full font-work text-base font-normal text-gray-600 sm:text-lg lg:max-w-3xl"
-                            data-animation="text"
-                        >
-                            A comprehensive overview of my technical expertise across
-                            different domains of software development and technology
-                        </p>
-                    </div>
+                <div className="  relative z-10">
+                    {/* title and subtitle here */}
+                    <Title title="Skills & Expertise" subtitle=" A comprehensive overview of my technical expertise across different domains of software development and technology" />
 
                     <div className="categories-container grid  grid-cols-3 sm:grid-cols-5 text-center mx-auto w-full items-center justify-between sm:justify-center  gap-3 mb-8">
                         {Object.keys(skillsData).map((category) => (
@@ -263,13 +250,13 @@ const SkillsSection: React.FC = () => {
                                 key={category}
                                 onClick={() => handleCategoryChange(category)}
                                 className={`category-btn px-2.5 py-2.5 md:px-4 md:py-3 rounded-lg  font-medium transition-all relative ${activeCategory === category
-                                        ? ""
-                                        : "bg-gray-50 text-gray-600 border border-gray-200 hover:border-gray-300"
+                                    ? ""
+                                    : "bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
                                     }`}
                             >
                                 {activeCategory === category && (
                                     <div
-                                        className="absolute inset-0 rounded-lg "
+                                        className="absolute inset-0 rounded-lg"
                                         style={{
                                             border: '1px solid transparent',
                                             backgroundImage: 'linear-gradient(90deg, #f3f4f6, #9ca3af, #1f2937, #9ca3af, #f3f4f6)',
@@ -287,7 +274,7 @@ const SkillsSection: React.FC = () => {
                         ))}
                     </div>
 
-                    <div className="skills-container space-y-4 relative p-3 md:p-6 bg-white hover:shadow-md transition-shadow duration-300 rounded-lg">
+                    <div className="skills-container space-y-4 relative p-3 md:p-6 bg-primary-light dark:bg-primary-dark hover:shadow-md transition-shadow duration-300 rounded-lg">
 
                         {getSkillRows().map((row, rowIndex) => (
                             <div
