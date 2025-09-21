@@ -9,6 +9,7 @@ import Title from "../Common/Title"
 import Image from "next/image"
 import Container from "../Common/Container"
 import { ExperienceTabs } from "./ExperienceTabs"
+import { Button } from "../ui/button"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -17,7 +18,7 @@ const Experience = () => {
 
 
   return (
-    <section ref={containerRef} className="relative bg-gradient-to-b from-white/50 to-transparent py-24">
+    <section ref={containerRef} className="relative bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-24">
       <Container className="">
         {/* title and subtitle */}
         <Title title="Professional Experience" subtitle="My professional journey building digital experiences" />
@@ -41,11 +42,13 @@ const Experience = () => {
         <div className="text-center mt-16">
           <Link
             href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-medium shadow-lg hover:scale-105 transition-transform"
+            className=""
           >
             {/* TODO: need to update button animation */}
-            Let&apos;s Work Together
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <Button>
+              Let&apos;s Work Together
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </Link>
         </div>
       </Container>
