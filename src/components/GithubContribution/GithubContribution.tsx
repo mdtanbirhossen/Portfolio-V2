@@ -87,8 +87,8 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                     ],
                     monthlyCommits: [30, 10, 7, 36, 45, 80, 100, 120, 170, 160, 220, 190],
                 })
-            } catch (err: any) {
-                setError("Error fetching data: " + err.message)
+            } catch (err) {
+                setError("Error fetching data: " + err)
                 console.error("Error fetching data:", err)
             }
         }
@@ -165,21 +165,21 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
     })))
 
     // Chart Data
-    const languageChartData = {
-        labels: stats?.languages.map((lang) => lang.name) || [],
-        datasets: [{ label: "Repositories", data: stats?.languages.map((lang) => lang.count) || [], backgroundColor: "rgba(59, 130, 246, 0.6)", borderColor: "#3b82f6", borderWidth: 1 }],
-    }
+    // const languageChartData = {
+    //     labels: stats?.languages.map((lang) => lang.name) || [],
+    //     datasets: [{ label: "Repositories", data: stats?.languages.map((lang) => lang.count) || [], backgroundColor: "rgba(59, 130, 246, 0.6)", borderColor: "#3b82f6", borderWidth: 1 }],
+    // }
 
-    const contributionTrendData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{ label: "Commits", data: stats?.monthlyCommits || [], fill: true, backgroundColor: "rgba(192, 38, 211, 0.2)", borderColor: "#c026d3", tension: 0.4 }],
-    }
+    // const contributionTrendData = {
+    //     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    //     datasets: [{ label: "Commits", data: stats?.monthlyCommits || [], fill: true, backgroundColor: "rgba(192, 38, 211, 0.2)", borderColor: "#c026d3", tension: 0.4 }],
+    // }
 
-    const chartOptions = {
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { backgroundColor: "#1f2937", titleColor: "#fff", bodyColor: "#fff" } },
-        scales: { x: { ticks: { color: "#9ca3af" } }, y: { ticks: { color: "#9ca3af" }, grid: { color: "rgba(156, 163, 175, 0.2)" } } },
-    }
+    // const chartOptions = {
+    //     maintainAspectRatio: false,
+    //     plugins: { legend: { display: false }, tooltip: { backgroundColor: "#1f2937", titleColor: "#fff", bodyColor: "#fff" } },
+    //     scales: { x: { ticks: { color: "#9ca3af" } }, y: { ticks: { color: "#9ca3af" }, grid: { color: "rgba(156, 163, 175, 0.2)" } } },
+    // }
 
     if (error) return <div className="text-center text-red-600 p-8">{error}</div>
 

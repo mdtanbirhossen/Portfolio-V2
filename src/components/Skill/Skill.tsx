@@ -46,7 +46,7 @@ export const getIconPlaceholder = (): JSX.Element => {
 
 const SkillsSection: React.FC = () => {
     const wrapperRef = useRef<HTMLDivElement>(null);
-    const titleRef = useRef<HTMLHeadingElement>(null);
+    // const titleRef = useRef<HTMLHeadingElement>(null);
     const [activeCategory, setActiveCategory] = useState<string>("languages");
     const [borderPosition, setBorderPosition] = useState<number>(0);
     const autoRotateTimerRef = useRef<NodeJS.Timeout | null>(null);
