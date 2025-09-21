@@ -18,7 +18,7 @@ const Experience = () => {
 
 
   return (
-    <section ref={containerRef} className="relative bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-24">
+    <section ref={containerRef} className="relative bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24">
       <Container className="">
         {/* title and subtitle */}
         <Title title="Professional Experience" subtitle="My professional journey building digital experiences" />

@@ -10,8 +10,8 @@ export default async function Home() {
 
       <Banner />
       <Experience />
-      <GithubContribution />
       <Skill />
+      <GithubContribution />
 
     </>
   );

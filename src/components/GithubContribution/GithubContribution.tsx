@@ -184,7 +184,7 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
     if (error) return <div className="text-center text-red-600 p-8">{error}</div>
 
     return (
-        <section ref={containerRef} className="py-24 relative overflow-hidden bg-gradient-to-b from-transparent to-transparent">
+        <section ref={containerRef} className=" relative overflow-hidden bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24">
             <Container className="">
                 <div className="relative  bg-transparent backdrop-blur-xl rounded-3xl shadow-2xl border border-secondary-dark overflow-hidden">
                     <div className="relative p-10">

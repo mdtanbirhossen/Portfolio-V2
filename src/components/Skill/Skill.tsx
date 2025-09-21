@@ -238,8 +238,8 @@ const SkillsSection: React.FC = () => {
     };
 
     return (
-        <section ref={wrapperRef} className="min-h-[750px] sm:min-h-[700px] lg:min-h-[600px]  py-10 md:py-20 bg-gradient-to-b from-white/50 to-transparent dark:from-black/50 dark:to-transparent overflow-x-hidden">
-            <Container className=" " >
+        <section ref={wrapperRef} className="min-h-[750px] sm:min-h-[700px] lg:min-h-[600px] py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white/50 to-transparent dark:from-black/50 dark:to-transparent overflow-x-hidden">
+            <Container className="" >
                 <div className="  relative z-10">
                     {/* title and subtitle here */}
                     <Title title="Skills & Expertise" subtitle=" A comprehensive overview of my technical expertise across different domains of software development and technology" />
