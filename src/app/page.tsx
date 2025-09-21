@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner/Banner";
 import Experience from "@/components/Experience/Experience";
+import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
 import GithubContribution from "@/components/GithubContribution/GithubContribution";
 // import Navbar from "@/components/Navbar/Navbar";
 import Skill from "@/components/Skill/Skill";
@@ -12,6 +13,7 @@ export default async function Home() {
       <Experience />
       <Skill />
       <GithubContribution />
+      <FeaturedProjects />
 
     </>
   );
