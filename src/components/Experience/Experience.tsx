@@ -13,89 +13,8 @@ import { ExperienceTabs } from "./ExperienceTabs"
 gsap.registerPlugin(ScrollTrigger)
 
 const Experience = () => {
-  // const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // const experiences = [
-  //   {
-  //     company: "Appify Devs",
-  //     location: "Dhaka, Bangladesh",
-  //     position: "Software Engineer",
-  //     jobType: "Remote",
-  //     duration: "Dec 2024 - Present",
-  //     color: "from-blue-500 to-purple-600",
-  //     icon: "🌟",
-  //     responsibilities: ["Developing both client frontend nd their interactive dashboard", "Contributing to both frontend and backend"],
-  //     projects: ["Contributed to multiple AI product", "Built AI platform echogpt.live"],
-  //   },
-
-  // ]
-
-  // const toggleExpand = (index: number) => {
-  //   setActiveIndex(activeIndex === index ? null : index)
-  // }
-
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     // Timeline items animation
-  //     gsap.utils.toArray<HTMLElement>(".exp-item").forEach((item, i) => {
-  //       gsap.fromTo(
-  //         item,
-  //         { autoAlpha: 0, y: i % 2 === 0 ? 100 : -100, scale: 0.9 },
-  //         {
-  //           autoAlpha: 1,
-  //           y: 0,
-  //           scale: 1,
-  //           duration: 1,
-  //           delay: i * 0.2,
-  //           ease: "power3.out",
-  //           scrollTrigger: {
-  //             trigger: item,
-  //             start: "top 80%",
-  //             toggleActions: "play none none reverse",
-  //           },
-  //         }
-  //       )
-  //     })
-
-  //     // Timeline dots bounce
-  //     gsap.utils.toArray<HTMLElement>(".exp-dot").forEach((dot) => {
-  //       gsap.fromTo(
-  //         dot,
-  //         { scale: 0, autoAlpha: 0 },
-  //         {
-  //           scale: 1,
-  //           autoAlpha: 1,
-  //           duration: 0.6,
-  //           ease: "elastic.out(1,0.5)",
-  //           scrollTrigger: {
-  //             trigger: dot,
-  //             start: "top 85%",
-  //             toggleActions: "play none none reverse",
-  //           },
-  //         }
-  //       )
-  //     })
-
-  //     // Section heading animation
-  //     gsap.fromTo(
-  //       ".exp-heading",
-  //       { y: -50, autoAlpha: 0 },
-  //       {
-  //         y: 0,
-  //         autoAlpha: 1,
-  //         duration: 1,
-  //         ease: "power4.out",
-  //         scrollTrigger: {
-  //           trigger: ".exp-heading",
-  //           start: "top 85%",
-  //         },
-  //       }
-  //     )
-  //   }, containerRef)
-
-  //   return () => ctx.revert()
-  // }, [])
 
   return (
     <section ref={containerRef} className="relative bg-gradient-to-b from-white/50 to-transparent py-24">
