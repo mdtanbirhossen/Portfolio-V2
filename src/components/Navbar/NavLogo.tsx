@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 
-const NavLogo = () => {
+const NavLogo = ({ className }: { className?: string }) => {
     const leftLogoRef = useRef<HTMLDivElement | null>(null);
     const rightLogoRef = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLDivElement | null>(null);
@@ -65,7 +65,7 @@ const NavLogo = () => {
 
     return (
         <div
-            className="flex flex-col items-center cursor-pointer"
+            className={`flex flex-col items-center cursor-pointer  ${className}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

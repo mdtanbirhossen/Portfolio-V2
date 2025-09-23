@@ -1,8 +1,9 @@
+import UnderConstruction from "@/components/UnderConstruction/UnderConstruction";
 
 export default function page() {
   return (
     <div>
-      about me page
+      <UnderConstruction />
     </div>
   )
 }
