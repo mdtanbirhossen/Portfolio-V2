@@ -197,9 +197,9 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                         </div>
 
                         {/* Stats */}
-                        {stats && (
+                        {/* {stats && (
                             <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                                {[{ label: "Commits", value: stats.totalCommits, icon: "📝" },
+                                {[{ label: "Commits", value: totalContributions, icon: "📝" },
                                 { label: "Repositories", value: stats.repositories, icon: "📂" },
                                 { label: "Pull Requests", value: stats.pullRequests, icon: "🔄" },
                                 { label: "Stars", value: stats.stars, icon: "⭐" }].map(stat => (
@@ -210,7 +210,7 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        )} */}
 
                         {/* Contribution Graph */}
                         <div className="flex items-center justify-between mb-8">
