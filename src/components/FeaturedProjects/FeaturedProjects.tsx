@@ -1,4 +1,3 @@
-// Featured Project Component
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -7,9 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCard from "./ProjectCard";
 import projects from "./projects"
 import Container from "../Common/Container";
+import Title from "../Common/Title";
 const FeaturedProjects = () => {
     const wrapperRef = useRef(null);
-    const titleRef = useRef(null);
 
 
     useEffect(() => {
@@ -53,24 +52,7 @@ const FeaturedProjects = () => {
             {/* Featured Projects Section */}
             <div className="w-full bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24" id="projects">
                 <Container>
-                    <div className="centered-block flex flex-col justify-center">
-                        <div className="flex flex-col justify-center gap-3" ref={wrapperRef}>
-                            <h2
-                                ref={titleRef}
-                                className="bottom-clipped relative inline-block overflow-hidden text-center font-anek text-4xl font-normal text-raisin-black sm:text-5xl lg:text-6xl"
-                                data-animation="text"
-                            >
-                                <span className="relative z-10">Projects</span>
-                            </h2>
-                            <p
-                                className="bottom-clipped inline-block translate-y-7 overflow-hidden text-center mx-auto w-full font-work text-base font-normal text-neutral-600 opacity-0 sm:text-lg lg:max-w-4/5 lg:text-xl"
-                                data-animation="text"
-                            >
-                                Some of my latest projects ..
-                            </p>
-                        </div>
-
-                    </div>
+                    <Title title="Featured Projects" subtitle="Showcasing innovative ideas brought to life through design and development." />
 
                     {/* Projects List */}
                     {projects.map((project) => (
