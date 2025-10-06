@@ -18,6 +18,7 @@ import Link from "next/link"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import Container from "../Common/Container"
+import Title from "../Common/Title"
 
 // ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend)
 gsap.registerPlugin(ScrollTrigger)
@@ -66,7 +67,7 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                 const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
                 if (!response.ok) throw new Error("Failed to fetch contributions")
                 const data = await response.json()
-            
+
 
                 setContributions(data.contributions)
                 updateDisplayedContributions(data.contributions, selectedYear)
@@ -164,28 +165,12 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
         return date.toLocaleString("default", { month: "short" })
     })))
 
-    // Chart Data
-    // const languageChartData = {
-    //     labels: stats?.languages.map((lang) => lang.name) || [],
-    //     datasets: [{ label: "Repositories", data: stats?.languages.map((lang) => lang.count) || [], backgroundColor: "rgba(59, 130, 246, 0.6)", borderColor: "#3b82f6", borderWidth: 1 }],
-    // }
-
-    // const contributionTrendData = {
-    //     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    //     datasets: [{ label: "Commits", data: stats?.monthlyCommits || [], fill: true, backgroundColor: "rgba(192, 38, 211, 0.2)", borderColor: "#c026d3", tension: 0.4 }],
-    // }
-
-    // const chartOptions = {
-    //     maintainAspectRatio: false,
-    //     plugins: { legend: { display: false }, tooltip: { backgroundColor: "#1f2937", titleColor: "#fff", bodyColor: "#fff" } },
-    //     scales: { x: { ticks: { color: "#9ca3af" } }, y: { ticks: { color: "#9ca3af" }, grid: { color: "rgba(156, 163, 175, 0.2)" } } },
-    // }
-
     if (error) return <div className="text-center text-red-600 p-8">{error}</div>
 
     return (
         <section ref={containerRef} className=" relative overflow-hidden bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24">
             <Container className="">
+                <Title title="GitHub Contribution" subtitle="See my github contributions here , You can also view my details contributions on GitHub." />
                 <div className="relative  bg-transparent backdrop-blur-xl rounded-3xl shadow-2xl border border-secondary-dark overflow-hidden">
                     <div className="relative p-10">
                         <div ref={headerRef} className="flex items-center gap-4 mb-6">
@@ -195,22 +180,6 @@ const GithubContribution: React.FC<GithubContributionProps> = ({ username = "mdt
                                 <p className="text-sm text-secondary-dark dark:text-secondary-light-text mt-1">Coding the future, one commit at a time — @{username}</p>
                             </div>
                         </div>
-
-                        {/* Stats */}
-                        {/* {stats && (
-                            <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                                {[{ label: "Commits", value: totalContributions, icon: "📝" },
-                                { label: "Repositories", value: stats.repositories, icon: "📂" },
-                                { label: "Pull Requests", value: stats.pullRequests, icon: "🔄" },
-                                { label: "Stars", value: stats.stars, icon: "⭐" }].map(stat => (
-                                    <div key={stat.label} className="bg-gray-100/50 backdrop-blur-sm p-4 rounded-lg border border-gray-200/50 text-center">
-                                        <div className="text-2xl mb-2">{stat.icon}</div>
-                                        <div className="text-xl font-semibold text-gray-900">{stat.value}</div>
-                                        <div className="text-sm text-gray-600">{stat.label}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        )} */}
 
                         {/* Contribution Graph */}
                         <div className="flex items-center justify-between mb-8">

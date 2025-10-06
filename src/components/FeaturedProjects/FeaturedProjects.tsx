@@ -1,61 +1,87 @@
-import React from 'react'
-import Container from '../Common/Container'
-import { StickyScroll } from '../ui/sticky-scroll-reveal'
+// Featured Project Component
+"use client";
 
-const content = [
-    {
-        title: "Collaborative Editing",
-        description:
-            "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-        content: (
-            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
-                Collaborative Editing
-            </div>
-        ),
-    },
-    {
-        title: "Real time changes",
-        description:
-            "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-        content: (
-            <div className="flex h-full w-full items-center justify-center text-white">
-                <img
-                    src="/linear.webp"
-                    width={300}
-                    height={300}
-                    className="h-full w-full object-cover"
-                    alt="linear board demo"
-                />
-            </div>
-        ),
-    },
-    {
-        title: "Version control",
-        description:
-            "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-        content: (
-            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
-                Version control
-            </div>
-        ),
-    },
-    {
-        title: "Running out of content",
-        description:
-            "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-        content: (
-            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
-                Running out of content
-            </div>
-        ),
-    },
-];
-export default function FeaturedProjects() {
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProjectCard from "./ProjectCard";
+import projects from "./projects"
+import Container from "../Common/Container";
+const FeaturedProjects = () => {
+    const wrapperRef = useRef(null);
+    const titleRef = useRef(null);
+
+
+    useEffect(() => {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+
+            gsap.fromTo(
+                '[data-animation="text"]',
+                {
+                    opacity: 0,
+                    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+                    y: 30,
+                },
+                {
+                    opacity: 1,
+                    clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: wrapperRef.current,
+                        start: "top 90%",
+                        once: true,
+                    },
+                }
+            );
+        }, wrapperRef);
+
+        return () => {
+            // Clean up the context and ScrollTrigger
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            ctx.revert();
+        };
+    }, []);
+
     return (
-        <section className='bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24'>
-            <Container>
-                <StickyScroll content={content} />
-            </Container>
-        </section>
-    )
-}
+        <>
+
+            {/* Featured Projects Section */}
+            <div className="w-full bg-gradient-to-b from-white/50 dark:from-black/50 to-transparent py-16 md:py-20 lg:py-24" id="projects">
+                <Container>
+                    <div className="centered-block flex flex-col justify-center">
+                        <div className="flex flex-col justify-center gap-3" ref={wrapperRef}>
+                            <h2
+                                ref={titleRef}
+                                className="bottom-clipped relative inline-block overflow-hidden text-center font-anek text-4xl font-normal text-raisin-black sm:text-5xl lg:text-6xl"
+                                data-animation="text"
+                            >
+                                <span className="relative z-10">Projects</span>
+                            </h2>
+                            <p
+                                className="bottom-clipped inline-block translate-y-7 overflow-hidden text-center mx-auto w-full font-work text-base font-normal text-neutral-600 opacity-0 sm:text-lg lg:max-w-4/5 lg:text-xl"
+                                data-animation="text"
+                            >
+                                Some of my latest projects ..
+                            </p>
+                        </div>
+
+                    </div>
+
+                    {/* Projects List */}
+                    {projects.map((project) => (
+                        <ProjectCard key={project?.name} project={project} />
+                    ))}
+
+                    {/* TODO: See More button */}
+                </Container>
+            </div>
+        </>
+    );
+};
+
+export default FeaturedProjects;
