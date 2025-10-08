@@ -173,7 +173,7 @@ function ProjectCard({ project }: ProjectCardType) {
                                 rel="nofollow"
                                 className="flex gap-1 text-base text-neutral-600 sm:text-lg"
                             >
-                                <span>View Repository</span>
+                                <span>Client Side Repo</span>
                             </a>
                         )}
                         {server_repo_link && (
@@ -184,7 +184,7 @@ function ProjectCard({ project }: ProjectCardType) {
                                 rel="nofollow"
                                 className="flex gap-1 text-base text-neutral-600 sm:text-lg"
                             >
-                                <span>View Repository</span>
+                                <span>Server Side Repo</span>
                             </a>
                         )}
                     </div>
