@@ -27,7 +27,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 <Container className=" sticky top-4 z-[999]">
                     <Navbar className="backdrop-blur-3xl"/>
                 </Container>
-                <main className="min-h-[calc(100vh-140px)] mt-5">
+                <main className="min-h-[calc(100vh-228px)] mt-5">
                     {children}
                 </main>
                 <Container>
