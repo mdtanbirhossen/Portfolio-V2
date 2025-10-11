@@ -7,6 +7,8 @@ import { FaDiscord, FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa6";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { FiLinkedin } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { toast } from "react-hot-toast";
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -53,31 +55,75 @@ export default function Page() {
 
   return (
     <>
-      <Container className="grid grid-cols-2 mt-20">
+      <Container className="grid grid-cols-1 md:grid-cols-2 my-20">
         {/* Contacts Info */}
-        <div className=" text-5xl   p-2 grid grid-cols-3 gap-2 *:h-full *:w-full *:flex *:items-center *:justify-center *:rounded-2xl   items-center justify-items-center">
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+        <div className="text-5xl p-2 grid grid-cols-3 gap-2 *:h-full *:w-full *:flex *:items-center *:justify-center *:rounded-2xl items-center justify-items-center">
+          {/* Email */}
+          <Link
+            href="mailto:mdtanbirhossen912@gmail.com"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+          >
             <IoMailOpenOutline />
-          </div>
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+          </Link>
+
+          {/* WhatsApp */}
+          <Link
+            href="https://wa.me/8801888156886"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+          >
             <FaWhatsapp />
-          </div>
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+          </Link>
+
+          {/* LinkedIn */}
+          <Link
+            href="https://www.linkedin.com/in/md-tanbir-hossen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+          >
             <FiLinkedin />
-          </div>
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+          </Link>
+
+          {/* Twitter (X) */}
+          <Link
+            href="https://x.com/Mdtanbirhosen81"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+          >
             <FaTwitter />
-          </div>
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+          </Link>
+
+          {/* Facebook */}
+          <Link
+            href="https://www.facebook.com/danger.ahaed.sstanbir.001/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light"
+          >
             <FaFacebook />
-          </div>
-          <div className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+          </Link>
+
+          {/* Discord (tooltip only) */}
+          <div
+            onClick={() => {
+              navigator.clipboard.writeText("mdtanbirhossen912");
+              toast.success("Discord username copied!");
+            }}
+            title="Click to copy Discord username"
+            className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light flex items-center justify-center rounded-2xl"
+          >
             <FaDiscord />
           </div>
+
+
         </div>
 
+
         {/* Email Form */}
-        <div className="max-w-md mx-auto bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6">
+        <div className="w-full mx-auto bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"

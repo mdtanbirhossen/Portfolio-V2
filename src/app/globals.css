@@ -244,35 +244,3 @@
 }
 
 
-.button {
-  /* Base styles */
-  background-color: var(--color-primary-dark); /* bg-primary-dark */
-  border: 2px solid var(--color-primary-dark); /* border-2 border-primary-dark */
-  color: var(--color-primary-light);           /* text-primary-light */
-  cursor: pointer;                             /* cursor-pointer */
-  transition: all 0.3s;                        /* duration-300 */
-
-  /* Optional: padding & border radius for button-like appearance */
-  padding: 0.5rem 1.25rem; 
-  border-radius: 0.5rem; 
-}
-
-/* Hover state */
-.button:hover {
-  background-color: var(--color-primary-light); /* hover:bg-primary-light */
-  color: var(--color-primary-dark);             /* hover:text-primary-dark */
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .button {
-    background-color: var(--color-primary-light); /* dark:bg-primary-light */
-    border-color: var(--color-primary-light);    /* dark:border-primary-light */
-    color: var(--color-primary-dark);            /* dark:text-primary-dark */
-  }
-
-  .button:hover {
-    background-color: var(--color-primary-dark); /* dark:hover:bg-primary-dark */
-    color: var(--color-primary-light);           /* dark:hover:text-primary-light */
-  }
-}
