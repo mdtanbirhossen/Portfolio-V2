@@ -20,12 +20,12 @@ export default function Page() {
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
     setStatus("");
@@ -43,6 +43,7 @@ export default function Page() {
       .then(
         (result) => {
           setStatus("✅ Email sent successfully!");
+          console.log(result)
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
