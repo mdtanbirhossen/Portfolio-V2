@@ -9,7 +9,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
-import { Check, Copy, Phone, PhoneCall, PhoneIcon } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 

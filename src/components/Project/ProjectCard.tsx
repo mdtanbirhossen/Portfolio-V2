@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 type ProjectType = {
     name: string;
@@ -99,10 +100,10 @@ function ProjectCard({ project }: ProjectCardType) {
 
     return (
         <div
-            className="w-full px-4 translate-y-60 py-14  mx-auto"
+            className="w-full px-4 translate-y-60 py-5  mx-auto bg-primary-light dark:bg-primary-dark border-2 border-secondary-light dark:border-secondary-dark rounded-2xl"
             ref={wrapperRef}
         >
-            <div className="centered-block flex h-full flex-col  gap-10">
+            <div className="centered-block flex h-full flex-col  gap-5">
                 <div className="relative w-full overflow-hidden ">
                     <div className="absolute right-0 top-0 z-20 h-[calc(100%-15px)] w-[12%] "></div>
                     <div className="absolute left-0 top-0 z-20 h-[calc(100%-15px)] w-[12%] "></div>
@@ -133,60 +134,57 @@ function ProjectCard({ project }: ProjectCardType) {
                         )}
                     </div>
                 </div>
-                <div className="flex w-full flex-col justify-start gap-3 ">
+                <div className="">
                     <h2
                         data-animation="text"
-                        className="mr-1 font-anek-bangla text-[26px] font-medium text-raisin-black"
+                        className="mr-1 font-anek-bangla text-[26px] font-medium "
                     >
                         {name}
                     </h2>
-                    <div className="mb-2 flex flex-wrap gap-3">
+                    <div className="mb-2 flex flex-wrap gap-3 ">
                         {tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-md bg-gray-200 px-2 py-1  text-xs text-neutral-600 duration-500 hover:cursor-default hover:bg-gray-600 hover:text-white hover:drop-shadow-md sm:text-base"
+                                className="rounded-md bg-gray-200 px-2 py-1 text-xs  text-neutral-600 duration-500 hover:cursor-default hover:bg-gray-600 hover:text-white hover:drop-shadow-md "
                             >
                                 {tag}
                             </span>
                         ))}
                     </div>
-                    {/* <p className="text-base text-neutral-600 sm:text-lg">{description}</p> */}
+                    <p className="text-base text-neutral-600 sm:text-lg">{description.slice(0, 100)} ...</p>
 
-                    <div className="flex gap-4">
-                        {link && (
-                            <a
-                                data-animation="text"
-                                href={link}
-                                target="_blank"
-                                rel="nofollow"
-                                className="flex gap-1 text-base text-neutral-600 sm:text-lg"
-                            >
-                                <span>Visit Website</span>
-                            </a>
-                        )}
-                        {client_repo_link && (
-                            <a
-                                data-animation="text"
-                                href={client_repo_link}
-                                target="_blank"
-                                rel="nofollow"
-                                className="flex gap-1 text-base text-neutral-600 sm:text-lg"
-                            >
-                                <span>Client Side Repo</span>
-                            </a>
-                        )}
-                        {server_repo_link && (
-                            <a
-                                data-animation="text"
-                                href={server_repo_link}
-                                target="_blank"
-                                rel="nofollow"
-                                className="flex gap-1 text-base text-neutral-600 sm:text-lg"
-                            >
-                                <span>Server Side Repo</span>
-                            </a>
-                        )}
-                    </div>
+                </div>
+                <div className="flex gap-4 mt-auto">
+                    {link && (
+                        <a
+                            data-animation="text"
+                            href={link}
+                            target="_blank"
+                            rel="nofollow"
+                        >
+                            <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Visit Website</Button>
+                        </a>
+                    )}
+                    {client_repo_link && (
+                        <a
+                            data-animation="text"
+                            href={client_repo_link}
+                            target="_blank"
+                            rel="nofollow"
+                        >
+                            <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Client Side Repo</Button>
+                        </a>
+                    )}
+                    {server_repo_link && (
+                        <a
+                            data-animation="text"
+                            href={server_repo_link}
+                            target="_blank"
+                            rel="nofollow"
+                        >
+                            <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Server Side Repo</Button>
+                        </a>
+                    )}
                 </div>
             </div>
         </div>

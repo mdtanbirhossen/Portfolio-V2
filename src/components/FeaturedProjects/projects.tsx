@@ -50,7 +50,6 @@ const projects = [
             "Tailwind CSS",
             "MongoDB",
             "Express",
-            "Stripe",
         ],
         link: "https://tour-nest-a8f37.web.app/",
         client_repo_link: "https://github.com/mdtanbirhossen/Tour-Nest-Client",
