@@ -1,4 +1,3 @@
-// Featured Project Component
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -100,11 +99,11 @@ function ProjectCard({ project }: ProjectCardType) {
 
     return (
         <div
-            className="w-full px-4 translate-y-60 py-14 max-w-7xl mx-auto"
+            className="w-full px-4 translate-y-60 py-14  mx-auto"
             ref={wrapperRef}
         >
-            <div className="centered-block flex h-full flex-col items-center gap-10 lg:flex-row">
-                <div className="relative w-full overflow-hidden lg:w-1/2">
+            <div className="centered-block flex h-full flex-col  gap-10">
+                <div className="relative w-full overflow-hidden ">
                     <div className="absolute right-0 top-0 z-20 h-[calc(100%-15px)] w-[12%] "></div>
                     <div className="absolute left-0 top-0 z-20 h-[calc(100%-15px)] w-[12%] "></div>
                     <Image
@@ -134,7 +133,7 @@ function ProjectCard({ project }: ProjectCardType) {
                         )}
                     </div>
                 </div>
-                <div className="flex w-full flex-col justify-start gap-3 lg:w-1/2">
+                <div className="flex w-full flex-col justify-start gap-3 ">
                     <h2
                         data-animation="text"
                         className="mr-1 font-anek-bangla text-[26px] font-medium text-raisin-black"
@@ -145,13 +144,13 @@ function ProjectCard({ project }: ProjectCardType) {
                         {tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-md bg-gray-200 px-3 py-2 font-anek-bangla text-sm text-neutral-600 duration-500 hover:cursor-default hover:bg-gray-600 hover:text-white hover:drop-shadow-md sm:text-base"
+                                className="rounded-md bg-gray-200 px-2 py-1  text-xs text-neutral-600 duration-500 hover:cursor-default hover:bg-gray-600 hover:text-white hover:drop-shadow-md sm:text-base"
                             >
                                 {tag}
                             </span>
                         ))}
                     </div>
-                    <p className="text-base text-neutral-600 sm:text-lg">{description}</p>
+                    {/* <p className="text-base text-neutral-600 sm:text-lg">{description}</p> */}
 
                     <div className="flex gap-4">
                         {link && (

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProjectCard from "./ProjectCard";
+import FeaturedProjectCard from "./FeaturedProjectCard";
 import projects from "./projects"
 import Container from "../Common/Container";
 import Title from "../Common/Title";
@@ -55,8 +55,8 @@ const FeaturedProjects = () => {
                     <Title title="Featured Projects" subtitle="Showcasing innovative ideas brought to life through design and development." />
 
                     {/* Projects List */}
-                    {projects.map((project) => (
-                        <ProjectCard key={project?.name} project={project} />
+                    {projects.slice(0,2).map((project) => (
+                        <FeaturedProjectCard key={project?.name} project={project} />
                     ))}
 
                     {/* TODO: See More button */}
