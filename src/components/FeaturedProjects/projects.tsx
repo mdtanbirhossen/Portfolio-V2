@@ -52,15 +52,6 @@ const projects = [
         link: "https://lingo-bingo-aecbd.web.app/",
         client_repo_link: "https://github.com/mdtanbirhossen/Lingo-Bingo"
     },
-    // {
-    //     name: "FitStat – Personal Training & Progress Tracker",
-    //     description: "FitStat is a full-stack fitness web application re-architected into Dockerized microservices. It supports distinct roles for Admins, Trainers, and Trainees, with features such as trainer bookings, session reviews, community engagement, and custom schedules. The system uses flexible MongoDB schemas to track routines, training slots, and gym assets.",
-    //     featuredImage: "/project_images/fitstat.png",
-    //     tags: ["ExpressJS", "React", "MongoDB", "Express", "Mongoose", "Stripe"],
-    //     link: "https://fitstat.netlify.app/",
-    //     client_repo_link: "https://github.com/emran-binhasan/fitstat-server",
-    //     server_repo_link: "https://github.com/emran-binhasan/fitstat-server"
-    // }
 ];
 
 
