@@ -15,7 +15,7 @@ import Title from "../Common/Title";
 
 export default function Education() {
     return (
-        <section className="bg-secondary-light mt-10 p-5 rounded-2xl">
+        <section className="bg-secondary-light dark:bg-secondary-dark mt-10 p-5 rounded-2xl">
             <Title
                 title="Education & Qualifications"
                 subtitle="A glimpse into my academic background, certifications, and technical learning journey."
