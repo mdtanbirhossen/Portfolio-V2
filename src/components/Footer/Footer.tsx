@@ -5,9 +5,9 @@ import { FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiWhatsappLogo } from "react-icons/pi";
 import Link from "next/link";
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   return (
-    <footer className="flex flex-col lg:flex-row p-2 py-3 items-center lg:justify-between w-full  border-2 border-secondary-light dark:border-secondary-dark rounded-lg">
+    <footer className={`flex flex-col lg:flex-row p-2 py-3 items-center lg:justify-between w-full  border-2 border-secondary-light dark:border-secondary-dark rounded-lg ${className}`}>
       <NavLogo className="hidden lg:flex" />
       {/* social links */}
       <div className="flex gap-3 text-lg md:text-xl lg:text-2xl ">
