@@ -4,12 +4,24 @@ import SplitText from "../SplitText/SplitText";
 import TextSlider from "../TextSlider/TextSlider";
 import { Button } from "../ui/button";
 import Link from "next/link";
-
+import Image from "next/image";
 
 export default function Banner() {
-
     return (
-        <Container className="min-h-[calc(100vh-72px)] flex flex-col  items-center justify-center">
+        <Container className="min-h-[calc(100vh-72px)] flex flex-col items-center justify-center">
+
+            {/* Professional Image */}
+            <div className="mb-6 md:mb-8">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto">
+                    <Image
+                        src="/images/professional-photo.jpg" // Replace with your image path
+                        alt="Md Tanbir Hossen"
+                        fill
+                        className="object-cover rounded-full border-4 border-primary-dark dark:border-primary-light shadow-lg"
+                        priority
+                    />
+                </div>
+            </div>
 
             {/* name intro */}
             <div>
@@ -42,6 +54,8 @@ export default function Banner() {
                     textAlign="center"
                 />
             </div>
+
+            {/* Description */}
             <div className="">
                 <TextSlider
                     sentences={[
@@ -49,23 +63,28 @@ export default function Banner() {
                         "Software Engineer building efficient and scalable web applications.",
                         "MERN Stack Developer creating dynamic and interactive web platforms.",
                         "Backend Developer designing robust server-side architectures and APIs."
-                    ]
-                    }
-                    duration={1} // cursor animation duration
-                    delayBetweenSentences={5000} // wait before next sentence
+                    ]}
+                    duration={1}
+                    delayBetweenSentences={5000}
                     className="text-sm md:text-lg lg:text-xl text-center text-secondary-dark dark:text-secondary-light-text"
                     cursorClassName="bg-secondary-dark"
-                    parentClassName="w-fit "
+                    parentClassName="w-fit"
                 />
-
-            </div>
-            <div className="flex  gap-2 mt-2">
-                <Link href={'https://github.com/mdtanbirhossen'}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Github <Github /></Button></Link>
-                <Link href={'https://drive.google.com/file/d/1AaamO8kSj_771TDAnOSFeLnO4iVkPgqG/view?usp=sharing'}><Button className=" bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">Resume <FileSymlink /></Button></Link>
-
-
             </div>
 
+            {/* CTA Buttons */}
+            <div className="flex gap-2 mt-2">
+                <Link href={'https://github.com/mdtanbirhossen'}>
+                    <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+                        Github <Github />
+                    </Button>
+                </Link>
+                <Link href={'https://drive.google.com/file/d/1AaamO8kSj_771TDAnOSFeLnO4iVkPgqG/view?usp=sharing'}>
+                    <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
+                        Resume <FileSymlink />
+                    </Button>
+                </Link>
+            </div>
         </Container>
     )
 }
