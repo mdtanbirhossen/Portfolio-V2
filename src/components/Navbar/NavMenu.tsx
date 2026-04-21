@@ -13,6 +13,7 @@ type MenuItem = {
         bgColor?: string;
         textColor?: string;
     };
+    download?: boolean;
 };
 
 export type NavMenuProps = {
@@ -52,8 +53,9 @@ const DEFAULT_ITEMS: MenuItem[] = [
     },
     {
         label: 'resume',
-        href: '#',
+        href: '/Md Tanbir Hossen Full Stack Developer.pdf',
         ariaLabel: 'Resume',
+        download: true,
     },
 ];
 
@@ -282,13 +284,14 @@ export default function NavMenu({
                                 className={[
                                     'pill-col',
                                     'flex justify-center items-stretch',
-                                    '[flex:0_0_calc(100%/3)]',
+                                    'flex-[0_0_calc(100%/3)]',
                                     'box-border'
                                 ].join(' ')}
                             >
                                 <Link
                                     role="menuitem"
                                     href={item.href}
+                                    download={item.download}
                                     onClick={handleToggle}
                                     aria-label={item.ariaLabel || item.label}
                                     className={[

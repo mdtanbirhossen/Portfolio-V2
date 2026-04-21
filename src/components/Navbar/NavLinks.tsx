@@ -9,7 +9,7 @@ export const navLinks = [
     { label: 'project', ariaLabel: 'Project', href: '/project' },
     { label: 'about me', ariaLabel: 'About me', href: '/about-me' },
     { label: 'contact', ariaLabel: 'Contact', href: '/contact' },
-    { label: 'resume', ariaLabel: 'Resume', href: '/' },
+    { label: 'resume', ariaLabel: 'Resume', href: '/Md Tanbir Hossen Full Stack Developer.pdf', download: true },
 ]
 
 export default function NavLinks() {
@@ -51,6 +51,7 @@ export default function NavLinks() {
                     <Link
                         key={item.label}
                         href={item.href}
+                        download={item.download}
                         ref={(el) => {
                             linkRefs.current[index] = el;
                         }}
