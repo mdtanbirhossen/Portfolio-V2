@@ -79,7 +79,7 @@ export default function Banner() {
                         Github <Github />
                     </Button>
                 </Link>
-                <Link href={'https://drive.google.com/file/d/1AaamO8kSj_771TDAnOSFeLnO4iVkPgqG/view?usp=sharing'}>
+                <Link href={'https://drive.google.com/file/d/1t-DGD3O3P4vrJx0AJDavhQNzOwSv77BK/view?usp=drive_link'}>
                     <Button className="bg-primary-dark border-2 border-primary-dark text-primary-light duration-300 cursor-pointer hover:bg-primary-light hover:text-primary-dark dark:bg-primary-light dark:border-primary-light dark:text-primary-dark dark:hover:bg-primary-dark dark:hover:text-primary-light">
                         Resume <FileSymlink />
                     </Button>
