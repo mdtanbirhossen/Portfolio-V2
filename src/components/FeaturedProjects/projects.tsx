@@ -4,9 +4,9 @@ const projects = [
         description: "A modern full-stack e-commerce platform featuring secure SSLCommerz payments, role-based dashboards, and real-time order management. I led backend development using NestJS, TypeORM, and MySQL, and assisted in frontend integration with Next.js and ShadCN UI.",
         featuredImage: "/assets/projects/nexus-wear.png",
         tags: ["Next.js", "NestJS", "TypeORM", "MySQL", "Tailwind CSS", "ShadCN UI", "SSLCommerz"],
-        link: "https://nexus-wear-tawny.vercel.app/",
-        client_repo_link: "https://github.com/TechZ-IT/Nexus-Wear",
-        server_repo_link: "https://github.com/TechZ-IT/Nexus-Wear-Backend"
+        link: "https://nexus-wear-theta.vercel.app/",
+        client_repo_link: "https://github.com/mdtanbirhossen/Nexus-Wear",
+        server_repo_link: "https://github.com/mdtanbirhossen/Nexus-Wear-Backend"
     },
     {
         name: "Tour Nest",
